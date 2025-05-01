@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 
 export function ThemeToggler() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -17,13 +17,7 @@ export function ThemeToggler() {
   return (
     <button
       aria-label="Toggle theme"
-      onClick={() => {
-        if (theme === "dark") {
-          setTheme("light");
-          return;
-        }
-        setTheme("dark");
-      }}
+      onClick={() => setTheme( theme === "dark" ? "light" : "dark" )}
       className="rounded-xs rounded p-1 hover:bg-gray-200 hover:dark:bg-[#313131]"
     >
       {theme === "dark" ? (

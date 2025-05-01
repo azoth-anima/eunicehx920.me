@@ -29,7 +29,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light" // default to dark mode, can be light, dark, system
+          defaultTheme="system" // default to dark mode, can be light, dark, system
           enableSystem
           disableTransitionOnChange
         >
